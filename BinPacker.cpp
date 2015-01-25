@@ -121,7 +121,7 @@ void BinPacker::Split(int pack, int rect)
     }
 
     if (maxLeftRightArea > maxBottomTopArea) {
-        if (left.GetArea() > right.GetArea()) {
+        if (left.GetArea() < right.GetArea()) {
             m_packs.push_back(left);
             m_packs.push_back(right);
         } else {
@@ -129,7 +129,7 @@ void BinPacker::Split(int pack, int rect)
             m_packs.push_back(left);
         }
     } else {
-        if (bottom.GetArea() > top.GetArea()) {
+        if (bottom.GetArea() < top.GetArea()) {
             m_packs.push_back(bottom);
             m_packs.push_back(top);
         } else {
